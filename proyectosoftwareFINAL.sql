@@ -1,6 +1,8 @@
 create database dbuniversidad
 use dbuniversidad
 
+--comentario
+
 go
 
 create table carrera
