@@ -19,6 +19,10 @@
         {
             width: 313px;
         }
+        .style4
+        {
+            height: 361px;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +45,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td colspan="3">
+                <td colspan="3" class="style4">
                     <rsweb:ReportViewer ID="ReportViewer3" runat="server" Font-Names="Verdana" 
                         Font-Size="8pt" Height="301px" InteractiveDeviceInfos="(Colección)" 
                         WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="726px">
@@ -62,11 +66,18 @@
             <tr>
                 <td colspan="3">
                     <rsweb:ReportViewer ID="ReportViewer4" runat="server" Font-Names="Verdana" 
-                        Font-Size="8pt" Height="331px" InteractiveDeviceInfos="(Colección)" 
-                        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="723px">
+                        Font-Size="8pt" Height="438px" InteractiveDeviceInfos="(Colección)" 
+                        WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="964px">
                         <LocalReport ReportPath="rptMateria.rdlc">
+                            <DataSources>
+                                <rsweb:ReportDataSource DataSourceId="ObjectDataSource3" Name="DataSet4" />
+                            </DataSources>
                         </LocalReport>
                     </rsweb:ReportViewer>
+                    <asp:ObjectDataSource ID="ObjectDataSource3" runat="server" 
+                        SelectMethod="GetData" 
+                        TypeName="SitioWebUniversidad.DataSet4TableAdapters.DataTable1TableAdapter">
+                    </asp:ObjectDataSource>
                 </td>
             </tr>
             <tr>

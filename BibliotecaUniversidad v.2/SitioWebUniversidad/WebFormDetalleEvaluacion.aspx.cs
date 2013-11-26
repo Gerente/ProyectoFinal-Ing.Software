@@ -14,24 +14,81 @@ namespace SitioWebUniversidad
         {
             if (!IsPostBack)
             {
-                var TEstudiantes = from tabla in contexto.estudiante select tabla;             
-                GridView1.DataSource = TEstudiantes;
-                GridView1.DataBind();
+                                     
+                //var TEstudiantes = from es in contexto.estudiante
+                //                       join i in contexto.inscripcion on es.codigo equals i.codigo
+                //                       join m in contexto.materia on i.sigla equals m.sigla 
+                //                       select new{
+                //                       es.codigo,
+                //                       es.nombre,
+                //                       es.paterno,
+                //                       es.materno,
+                //                       es.genero                                      
+                //                       };
+
+                ////var TEstudiantes = from tabla in contexto.estudiante select tabla; 
+
+                //GridView1.DataSource = TEstudiantes;
+                //GridView1.DataBind();
             }
         }
 
         protected void btnBuscarMateria_Click(object sender, EventArgs e)
         {
-            string sigla = txtcodmateria.Text;
-            //SitioWebUniversidad.materia objmateria = contexto.materia.FirstOrDefault(a => a.sigla == sigla);
+            //long siglaa;
+            //if (long.TryParse(this.txtcodmateria.Text, out siglaa) == true)
+            //{
+            //    var objmateria = from es in contexto.estudiante
+            //                           join i in contexto.inscripcion on es.codigo equals i.codigo
+            //                           join m in contexto.materia on i.sigla equals m.sigla 
+            //                           where es.codigo.Equals(i.sigla)
+            //                     //where i.sigla.Equals(siglaa)
+            //                           select new
+            //                           {                                     
+            //                               Codigo = es.codigo,
+            //                               Nombre = es.nombre,
 
+            //                               Paterno = es.paterno,
+            //                               Materno = es.materno,
+            //                               Genero = es.genero,                                                                            
+            //                           };
+
+            //this.GridView2.DataSource = objmateria;
+            //this.GridView2.DataBind();  
+            //}
+            //}
+
+            string sigla = txtcodmateria.Text;
+            // SitioWebUniversidad.materia objmateria = contexto.materia.FirstOrDefault(a => a.sigla == sigla);        
             SitioWebUniversidad.materia objMateria = new SitioWebUniversidad.materia();
             objMateria = contexto.materia.FirstOrDefault(a => a.sigla == sigla);
-                  
+
             if (objMateria != null)
             {
-                txtdetallemateria.Text = objMateria.nombre + "\n" + objMateria.detalle;         
+                txtdetallemateria.Text = objMateria.nombre + "\n" + objMateria.detalle;
+                mostrarEstudiantes();
             }
+        }
+
+        private void mostrarEstudiantes()
+        {
+            var TEstudiantes = from es in contexto.estudiante
+                               join i in contexto.inscripcion on es.codigo equals i.codigo
+                               join m in contexto.materia on i.sigla equals m.sigla
+                               where i.sigla.Contains(txtcodmateria.Text)                              
+                               select new 
+                               {
+                                   es.codigo,
+                                   es.nombre,
+                                   es.paterno,
+                                   es.materno,
+                                   es.genero
+                               };
+
+            //var TEstudiantes = from tabla in contexto.estudiante select tabla; 
+
+            GridView1.DataSource = TEstudiantes;
+            GridView1.DataBind();
         }
 
         protected void btnguardarnotas_Click(object sender, EventArgs e)

@@ -12,7 +12,9 @@
               <DbSource ConnectionRef="dbuniversidadConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        detalleEvaluacion.*, estudiante.*, evaluacion.*, materia.*
+                    <CommandText>SELECT        detalleEvaluacion.codigo, detalleEvaluacion.numero, detalleEvaluacion.nota, estudiante.codigo AS codigo1, estudiante.nombre, estudiante.paterno, 
+                         estudiante.materno, estudiante.genero, estudiante.codigoc, evaluacion.numero AS numero1, evaluacion.detalle, evaluacion.puntaje, evaluacion.sigla, 
+                         evaluacion.nombre AS nombre2, materia.sigla AS sigla1, materia.nombre AS nombre3, materia.detalle AS detalle3
 FROM            detalleEvaluacion INNER JOIN
                          estudiante ON detalleEvaluacion.codigo = estudiante.codigo INNER JOIN
                          evaluacion ON detalleEvaluacion.numero = evaluacion.numero INNER JOIN
@@ -31,32 +33,17 @@ FROM            detalleEvaluacion INNER JOIN
               <Mapping SourceColumn="paterno" DataSetColumn="paterno" />
               <Mapping SourceColumn="materno" DataSetColumn="materno" />
               <Mapping SourceColumn="genero" DataSetColumn="genero" />
-              <Mapping SourceColumn="correo" DataSetColumn="correo" />
-              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
               <Mapping SourceColumn="codigoc" DataSetColumn="codigoc" />
               <Mapping SourceColumn="numero1" DataSetColumn="numero1" />
-              <Mapping SourceColumn="nombre1" DataSetColumn="nombre1" />
               <Mapping SourceColumn="detalle" DataSetColumn="detalle" />
               <Mapping SourceColumn="puntaje" DataSetColumn="puntaje" />
               <Mapping SourceColumn="sigla" DataSetColumn="sigla" />
-              <Mapping SourceColumn="sigla1" DataSetColumn="sigla1" />
               <Mapping SourceColumn="nombre2" DataSetColumn="nombre2" />
-              <Mapping SourceColumn="detalle1" DataSetColumn="detalle1" />
+              <Mapping SourceColumn="sigla1" DataSetColumn="sigla1" />
+              <Mapping SourceColumn="nombre3" DataSetColumn="nombre33" />
+              <Mapping SourceColumn="detalle3" DataSetColumn="detalle3" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="dbuniversidadConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        detalleEvaluacion.*, estudiante.*, evaluacion.*, materia.*
-FROM            detalleEvaluacion INNER JOIN
-                         estudiante ON detalleEvaluacion.codigo = estudiante.codigo INNER JOIN
-                         evaluacion ON detalleEvaluacion.numero = evaluacion.numero INNER JOIN
-                         materia ON evaluacion.sigla = materia.sigla</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -101,23 +88,8 @@ FROM            detalleEvaluacion INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="correo" msprop:Generator_ColumnVarNameInTable="columncorreo" msprop:Generator_ColumnPropNameInRow="correo" msprop:Generator_ColumnPropNameInTable="correoColumn" msprop:Generator_UserColumnName="correo">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:int" />
               <xs:element name="codigoc" msprop:Generator_ColumnVarNameInTable="columncodigoc" msprop:Generator_ColumnPropNameInRow="codigoc" msprop:Generator_ColumnPropNameInTable="codigocColumn" msprop:Generator_UserColumnName="codigoc" type="xs:int" />
               <xs:element name="numero1" msprop:Generator_ColumnVarNameInTable="columnnumero1" msprop:Generator_ColumnPropNameInRow="numero1" msprop:Generator_ColumnPropNameInTable="numero1Column" msprop:Generator_UserColumnName="numero1" type="xs:int" />
-              <xs:element name="nombre1" msprop:Generator_ColumnVarNameInTable="columnnombre1" msprop:Generator_ColumnPropNameInRow="nombre1" msprop:Generator_ColumnPropNameInTable="nombre1Column" msprop:Generator_UserColumnName="nombre1">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="detalle" msprop:Generator_ColumnVarNameInTable="columndetalle" msprop:Generator_ColumnPropNameInRow="detalle" msprop:Generator_ColumnPropNameInTable="detalleColumn" msprop:Generator_UserColumnName="detalle">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -133,13 +105,6 @@ FROM            detalleEvaluacion INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="sigla1" msprop:Generator_ColumnVarNameInTable="columnsigla1" msprop:Generator_ColumnPropNameInRow="sigla1" msprop:Generator_ColumnPropNameInTable="sigla1Column" msprop:Generator_UserColumnName="sigla1">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="nombre2" msprop:Generator_ColumnVarNameInTable="columnnombre2" msprop:Generator_ColumnPropNameInRow="nombre2" msprop:Generator_ColumnPropNameInTable="nombre2Column" msprop:Generator_UserColumnName="nombre2">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -147,7 +112,21 @@ FROM            detalleEvaluacion INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="detalle1" msprop:Generator_ColumnVarNameInTable="columndetalle1" msprop:Generator_ColumnPropNameInRow="detalle1" msprop:Generator_ColumnPropNameInTable="detalle1Column" msprop:Generator_UserColumnName="detalle1">
+              <xs:element name="sigla1" msprop:Generator_ColumnVarNameInTable="columnsigla1" msprop:Generator_ColumnPropNameInRow="sigla1" msprop:Generator_ColumnPropNameInTable="sigla1Column" msprop:Generator_UserColumnName="sigla1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre33" msprop:Generator_ColumnVarNameInTable="columnnombre33" msprop:Generator_ColumnPropNameInRow="nombre33" msprop:Generator_ColumnPropNameInTable="nombre33Column" msprop:Generator_UserColumnName="nombre33">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="detalle3" msprop:Generator_ColumnVarNameInTable="columndetalle3" msprop:Generator_ColumnPropNameInRow="detalle3" msprop:Generator_ColumnPropNameInTable="detalle3Column" msprop:Generator_UserColumnName="detalle3">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />

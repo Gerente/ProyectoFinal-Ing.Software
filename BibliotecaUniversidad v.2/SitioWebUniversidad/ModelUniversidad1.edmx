@@ -4,28 +4,37 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbuniversidadModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="dbuniversidadModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="dbuniversidadModel1StoreContainer">
           <EntitySet Name="carrera" EntityType="dbuniversidadModel1.Store.carrera" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="detalleEvaluacion" EntityType="dbuniversidadModel1.Store.detalleEvaluacion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="estudiante" EntityType="dbuniversidadModel1.Store.estudiante" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="evaluacion" EntityType="dbuniversidadModel1.Store.evaluacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="inscripcion" EntityType="dbuniversidadModel1.Store.inscripcion" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="materia" EntityType="dbuniversidadModel1.Store.materia" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__detalleEv__codig__15502E78" Association="dbuniversidadModel1.Store.FK__detalleEv__codig__15502E78">
+          <AssociationSet Name="FK__detalleEv__codig__2C3393D0" Association="dbuniversidadModel1.Store.FK__detalleEv__codig__2C3393D0">
             <End Role="estudiante" EntitySet="estudiante" />
             <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__detalleEv__numer__164452B1" Association="dbuniversidadModel1.Store.FK__detalleEv__numer__164452B1">
+          <AssociationSet Name="FK__detalleEv__numer__2D27B809" Association="dbuniversidadModel1.Store.FK__detalleEv__numer__2D27B809">
             <End Role="evaluacion" EntitySet="evaluacion" />
             <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__estudiant__codig__0BC6C43E" Association="dbuniversidadModel1.Store.FK__estudiant__codig__0BC6C43E">
+          <AssociationSet Name="FK__estudiant__codig__22AA2996" Association="dbuniversidadModel1.Store.FK__estudiant__codig__22AA2996">
             <End Role="carrera" EntitySet="carrera" />
             <End Role="estudiante" EntitySet="estudiante" />
           </AssociationSet>
-          <AssociationSet Name="FK__evaluacio__sigla__108B795B" Association="dbuniversidadModel1.Store.FK__evaluacio__sigla__108B795B">
+          <AssociationSet Name="FK__evaluacio__sigla__276EDEB3" Association="dbuniversidadModel1.Store.FK__evaluacio__sigla__276EDEB3">
             <End Role="materia" EntitySet="materia" />
             <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__inscripci__codig__37A5467C" Association="dbuniversidadModel1.Store.FK__inscripci__codig__37A5467C">
+            <End Role="estudiante" EntitySet="estudiante" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__inscripci__sigla__36B12243" Association="dbuniversidadModel1.Store.FK__inscripci__sigla__36B12243">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="carrera">
@@ -68,6 +77,15 @@
           <Property Name="puntaje" Type="int" Nullable="false" />
           <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
         </EntityType>
+        <EntityType Name="inscripcion">
+          <Key>
+            <PropertyRef Name="sigla" />
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="materia">
           <Key>
             <PropertyRef Name="sigla" />
@@ -76,7 +94,7 @@
           <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
         </EntityType>
-        <Association Name="FK__detalleEv__codig__15502E78">
+        <Association Name="FK__detalleEv__codig__2C3393D0">
           <End Role="estudiante" Type="dbuniversidadModel1.Store.estudiante" Multiplicity="1" />
           <End Role="detalleEvaluacion" Type="dbuniversidadModel1.Store.detalleEvaluacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -88,7 +106,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__detalleEv__numer__164452B1">
+        <Association Name="FK__detalleEv__numer__2D27B809">
           <End Role="evaluacion" Type="dbuniversidadModel1.Store.evaluacion" Multiplicity="1" />
           <End Role="detalleEvaluacion" Type="dbuniversidadModel1.Store.detalleEvaluacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -100,7 +118,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__estudiant__codig__0BC6C43E">
+        <Association Name="FK__estudiant__codig__22AA2996">
           <End Role="carrera" Type="dbuniversidadModel1.Store.carrera" Multiplicity="1" />
           <End Role="estudiante" Type="dbuniversidadModel1.Store.estudiante" Multiplicity="*" />
           <ReferentialConstraint>
@@ -112,7 +130,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__evaluacio__sigla__108B795B">
+        <Association Name="FK__evaluacio__sigla__276EDEB3">
           <End Role="materia" Type="dbuniversidadModel1.Store.materia" Multiplicity="1" />
           <End Role="evaluacion" Type="dbuniversidadModel1.Store.evaluacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -124,8 +142,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <Association Name="FK__inscripci__codig__37A5467C">
+          <End Role="estudiante" Type="dbuniversidadModel1.Store.estudiante" Multiplicity="1" />
+          <End Role="inscripcion" Type="dbuniversidadModel1.Store.inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estudiante">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__inscripci__sigla__36B12243">
+          <End Role="materia" Type="dbuniversidadModel1.Store.materia" Multiplicity="1" />
+          <End Role="inscripcion" Type="dbuniversidadModel1.Store.inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="sigla" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="sigla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbuniversidadModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -150,6 +191,15 @@
           <AssociationSet Name="FK__evaluacio__sigla__108B795B" Association="dbuniversidadModel1.FK__evaluacio__sigla__108B795B">
             <End Role="materia" EntitySet="materia" />
             <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+          <EntitySet Name="inscripcion" EntityType="dbuniversidadModel1.inscripcion" />
+          <AssociationSet Name="FK__inscripci__codig__37A5467C" Association="dbuniversidadModel1.FK__inscripci__codig__37A5467C">
+            <End Role="estudiante" EntitySet="estudiante" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__inscripci__sigla__36B12243" Association="dbuniversidadModel1.FK__inscripci__sigla__36B12243">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="inscripcion" EntitySet="inscripcion" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="carrera">
@@ -186,6 +236,7 @@
           <Property Name="codigoc" Type="Int32" Nullable="false" />
           <NavigationProperty Name="carrera" Relationship="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" FromRole="estudiante" ToRole="carrera" />
           <NavigationProperty Name="detalleEvaluacion" Relationship="dbuniversidadModel1.FK__detalleEv__codig__15502E78" FromRole="estudiante" ToRole="detalleEvaluacion" />
+          <NavigationProperty Name="inscripcion" Relationship="dbuniversidadModel1.FK__inscripci__codig__37A5467C" FromRole="estudiante" ToRole="inscripcion" />
         </EntityType>
         <EntityType Name="evaluacion">
           <Key>
@@ -207,6 +258,7 @@
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="detalle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="evaluacion" Relationship="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" FromRole="materia" ToRole="evaluacion" />
+          <NavigationProperty Name="inscripcion" Relationship="dbuniversidadModel1.FK__inscripci__sigla__36B12243" FromRole="materia" ToRole="inscripcion" />
         </EntityType>
         <Association Name="FK__estudiant__codig__0BC6C43E">
           <End Role="carrera" Type="dbuniversidadModel1.carrera" Multiplicity="1" />
@@ -256,6 +308,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="inscripcion">
+          <Key>
+            <PropertyRef Name="sigla" />
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Type="String" Name="sigla" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="codigo" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="false" />
+          <NavigationProperty Name="estudiante" Relationship="dbuniversidadModel1.FK__inscripci__codig__37A5467C" FromRole="inscripcion" ToRole="estudiante" />
+          <NavigationProperty Name="materia" Relationship="dbuniversidadModel1.FK__inscripci__sigla__36B12243" FromRole="inscripcion" ToRole="materia" />
+        </EntityType>
+        <Association Name="FK__inscripci__codig__37A5467C">
+          <End Type="dbuniversidadModel1.estudiante" Role="estudiante" Multiplicity="1" />
+          <End Type="dbuniversidadModel1.inscripcion" Role="inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estudiante">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__inscripci__sigla__36B12243">
+          <End Type="dbuniversidadModel1.materia" Role="materia" Multiplicity="1" />
+          <End Type="dbuniversidadModel1.inscripcion" Role="inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="sigla" />
+            </Principal>
+            <Dependent Role="inscripcion">
+              <PropertyRef Name="sigla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -294,6 +381,15 @@
             <ScalarProperty Name="nombre" ColumnName="nombre" />
             <ScalarProperty Name="detalle" ColumnName="detalle" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="inscripcion">
+            <EntityTypeMapping TypeName="dbuniversidadModel1.inscripcion">
+              <MappingFragment StoreEntitySet="inscripcion">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="sigla" ColumnName="sigla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -315,27 +411,36 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="ModelUniversidad1">
-        <EntityTypeShape EntityType="dbuniversidadModel1.carrera" Width="1.5" PointX="0.75" PointY="6.375" Height="1.7879850260416665" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbuniversidadModel1.detalleEvaluacion" Width="1.5" PointX="5.25" PointY="1.125" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbuniversidadModel1.estudiante" Width="1.5" PointX="3" PointY="5.875" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.carrera" Width="1.5" PointX="0.75" PointY="6.125" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.detalleEvaluacion" Width="1.5" PointX="6" PointY="1.125" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.estudiante" Width="1.5" PointX="4.125" PointY="4.5" Height="3.1340950520833335" IsExpanded="true" />
         <EntityTypeShape EntityType="dbuniversidadModel1.evaluacion" Width="1.5" PointX="3" PointY="1" Height="2.3648893229166656" IsExpanded="true" />
         <EntityTypeShape EntityType="dbuniversidadModel1.materia" Width="1.5" PointX="0.75" PointY="1.25" Height="1.7879850260416674" IsExpanded="true" />
         <AssociationConnector Association="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="7.2689925130208337" />
-          <ConnectorPoint PointX="3" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="6.8795475260416667" />
+          <ConnectorPoint PointX="4.125" PointY="6.8795475260416667" />
         </AssociationConnector>
         <AssociationConnector Association="dbuniversidadModel1.FK__detalleEv__codig__15502E78" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="7.3458968098958328" />
-          <ConnectorPoint PointX="6" PointY="7.3458968098958328" />
-          <ConnectorPoint PointX="6" PointY="3.1052864583333335" />
+          <ConnectorPoint PointX="5.625" PointY="6.0670475260416667" />
+          <ConnectorPoint PointX="6.75" PointY="6.0670475260416667" />
+          <ConnectorPoint PointX="6.75" PointY="3.1052864583333335" />
         </AssociationConnector>
         <AssociationConnector Association="dbuniversidadModel1.FK__detalleEv__numer__164452B1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.1151432291666667" />
-          <ConnectorPoint PointX="5.25" PointY="2.1151432291666667" />
+          <ConnectorPoint PointX="6" PointY="2.1151432291666667" />
         </AssociationConnector>
         <AssociationConnector Association="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.1439925130208337" />
-          <ConnectorPoint PointX="3" PointY="2.1439925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="2.2401432291666667" />
+          <ConnectorPoint PointX="3" PointY="2.2401432291666667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="dbuniversidadModel1.inscripcion" Width="1.5" PointX="1.625" PointY="3.625" Height="1.9802864583333335" />
+        <AssociationConnector Association="dbuniversidadModel1.FK__inscripci__codig__37A5467C" >
+          <ConnectorPoint PointX="4.125" PointY="5.0526432291666667" />
+          <ConnectorPoint PointX="3.125" PointY="5.0526432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbuniversidadModel1.FK__inscripci__sigla__36B12243" >
+          <ConnectorPoint PointX="1.9375" PointY="3.2302864583333331" />
+          <ConnectorPoint PointX="1.9375" PointY="3.625" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

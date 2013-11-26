@@ -22,6 +22,8 @@ namespace SitioWebUniversidad
                 DropDownList1.DataSource = TCarrera;
                 DropDownList1.DataBind();
             }
+            btneliminar.Visible = false;
+            btnmodificar.Visible = false;
         }
 
         public void ActualizarVista()
@@ -46,7 +48,7 @@ namespace SitioWebUniversidad
             {
                 Label1.Text = "Error en el registro de Estudiante";
             }
-            
+            Limpiar();
         }
 
         private bool guardarestudiante(estudiante objestudiante)
@@ -67,14 +69,30 @@ namespace SitioWebUniversidad
             objestudiante.codigoc = int.Parse(DropDownList1.SelectedValue);
         }
 
+
         protected void btneliminar_Click(object sender, EventArgs e)
         {
-            int registro = int.Parse(EstudianteNum1.texto2);
+            int registro = int.Parse(EstudianteNum1.texto2);          
+
             SitioWebUniversidad.estudiante objestudiante = contexto.estudiante.FirstOrDefault
                 (a => a.codigo == registro);
-
+                 
             if (objestudiante != null)
             {
+                SitioWebUniversidad.detalleEvaluacion objdetalle = contexto.detalleEvaluacion.FirstOrDefault(a => a.codigo == registro);
+                if (objdetalle != null)
+                {
+                    contexto.DeleteObject(objdetalle);
+                    contexto.SaveChanges();
+                }
+                
+                SitioWebUniversidad.inscripcion objinscripcion = contexto.inscripcion.FirstOrDefault(a => a.codigo == registro);
+                if (objinscripcion != null)
+                {
+                    contexto.DeleteObject(objinscripcion);
+                    contexto.SaveChanges();
+                }   
+            
                 contexto.DeleteObject(objestudiante);
                 this.Label1.Text = "Elimido Correctamente";
                 contexto.SaveChanges();
@@ -84,6 +102,8 @@ namespace SitioWebUniversidad
             {
                 Label1.Text = "Error en la eliminacion";
             }
+            BtnListos();
+            Limpiar();
         }
 
         protected void btnbuscar_Click(object sender, EventArgs e)
@@ -135,6 +155,8 @@ namespace SitioWebUniversidad
             {
                 Label1.Text = "Modificacion Incorrecta";
             }
+            BtnListos();
+            Limpiar();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,8 +172,30 @@ namespace SitioWebUniversidad
             EstudianteNum2.texto2 = GridView1.Rows[fila].Cells[6].Text;
 
             DropDownList1.SelectedValue = GridView1.Rows[fila].Cells[7].Text;
-        
+            BtnModi();
         }
-
+        protected void Limpiar()
+        {
+            EstudianteNum1.texto2 = "";
+            EstudianteNum2.texto2 = "";
+            EstudianteLetras1.texto3 = "";
+            EstudianteLetras2.texto3 = "";
+            EstudianteLetras3.texto3 = "";
+            Estudiante1.texto = "";
+            RadioButtonList1.Text = "";
+        }
+        protected void BtnModi()
+        {
+            btneliminar.Visible = false;
+            btnmodificar.Visible = true;
+            btnregistrar.Visible = false;
+            Label1.Text = "";
+        }
+        protected void BtnListos()
+        {
+            btneliminar.Visible = false;
+            btnmodificar.Visible = false;
+            btnregistrar.Visible = true;
+        }
     }
 }

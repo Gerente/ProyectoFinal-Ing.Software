@@ -31,6 +31,15 @@ namespace SitioWebUniversidad {
         protected global::REGISTRO.EstudianteNum EstudianteNum1;
         
         /// <summary>
+        /// Control btnbuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnbuscar;
+        
+        /// <summary>
         /// Control EstudianteLetras1.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace SitioWebUniversidad {
         protected global::REGISTRO.EstudianteNum EstudianteNum2;
         
         /// <summary>
+        /// Control Atras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Atras;
+        
+        /// <summary>
         /// Control DropDownList1.
         /// </summary>
         /// <remarks>
@@ -146,15 +164,6 @@ namespace SitioWebUniversidad {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-        
-        /// <summary>
-        /// Control btnbuscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnbuscar;
         
         /// <summary>
         /// Control GridView1.

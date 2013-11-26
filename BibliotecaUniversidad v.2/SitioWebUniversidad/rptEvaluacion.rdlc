@@ -413,6 +413,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!nombre1.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>1 Examen</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>1.97591cm</Top>
         <Left>1.36737cm</Left>
         <Height>1.2cm</Height>
@@ -461,7 +470,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.9375in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>

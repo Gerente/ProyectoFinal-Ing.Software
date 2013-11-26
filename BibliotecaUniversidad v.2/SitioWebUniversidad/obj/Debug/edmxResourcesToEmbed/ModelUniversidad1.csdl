@@ -22,6 +22,15 @@
       <End Role="materia" EntitySet="materia" />
       <End Role="evaluacion" EntitySet="evaluacion" />
     </AssociationSet>
+    <EntitySet Name="inscripcion" EntityType="dbuniversidadModel1.inscripcion" />
+    <AssociationSet Name="FK__inscripci__codig__37A5467C" Association="dbuniversidadModel1.FK__inscripci__codig__37A5467C">
+      <End Role="estudiante" EntitySet="estudiante" />
+      <End Role="inscripcion" EntitySet="inscripcion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__inscripci__sigla__36B12243" Association="dbuniversidadModel1.FK__inscripci__sigla__36B12243">
+      <End Role="materia" EntitySet="materia" />
+      <End Role="inscripcion" EntitySet="inscripcion" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="carrera">
     <Key>
@@ -57,6 +66,7 @@
     <Property Name="codigoc" Type="Int32" Nullable="false" />
     <NavigationProperty Name="carrera" Relationship="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" FromRole="estudiante" ToRole="carrera" />
     <NavigationProperty Name="detalleEvaluacion" Relationship="dbuniversidadModel1.FK__detalleEv__codig__15502E78" FromRole="estudiante" ToRole="detalleEvaluacion" />
+    <NavigationProperty Name="inscripcion" Relationship="dbuniversidadModel1.FK__inscripci__codig__37A5467C" FromRole="estudiante" ToRole="inscripcion" />
   </EntityType>
   <EntityType Name="evaluacion">
     <Key>
@@ -78,6 +88,7 @@
     <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="detalle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="evaluacion" Relationship="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" FromRole="materia" ToRole="evaluacion" />
+    <NavigationProperty Name="inscripcion" Relationship="dbuniversidadModel1.FK__inscripci__sigla__36B12243" FromRole="materia" ToRole="inscripcion" />
   </EntityType>
   <Association Name="FK__estudiant__codig__0BC6C43E">
     <End Role="carrera" Type="dbuniversidadModel1.carrera" Multiplicity="1" />
@@ -123,6 +134,41 @@
         <PropertyRef Name="sigla" />
       </Principal>
       <Dependent Role="evaluacion">
+        <PropertyRef Name="sigla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="inscripcion">
+    <Key>
+      <PropertyRef Name="sigla" />
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Type="String" Name="sigla" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="codigo" Nullable="false" />
+    <Property Type="DateTime" Name="fecha" Nullable="false" />
+    <NavigationProperty Name="estudiante" Relationship="dbuniversidadModel1.FK__inscripci__codig__37A5467C" FromRole="inscripcion" ToRole="estudiante" />
+    <NavigationProperty Name="materia" Relationship="dbuniversidadModel1.FK__inscripci__sigla__36B12243" FromRole="inscripcion" ToRole="materia" />
+  </EntityType>
+  <Association Name="FK__inscripci__codig__37A5467C">
+    <End Type="dbuniversidadModel1.estudiante" Role="estudiante" Multiplicity="1" />
+    <End Type="dbuniversidadModel1.inscripcion" Role="inscripcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="inscripcion">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__inscripci__sigla__36B12243">
+    <End Type="dbuniversidadModel1.materia" Role="materia" Multiplicity="1" />
+    <End Type="dbuniversidadModel1.inscripcion" Role="inscripcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materia">
+        <PropertyRef Name="sigla" />
+      </Principal>
+      <Dependent Role="inscripcion">
         <PropertyRef Name="sigla" />
       </Dependent>
     </ReferentialConstraint>

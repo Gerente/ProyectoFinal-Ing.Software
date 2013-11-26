@@ -295,15 +295,9 @@ namespace SitioWebUniversidad {
             
             private global::System.Data.DataColumn columngenero;
             
-            private global::System.Data.DataColumn columncorreo;
-            
-            private global::System.Data.DataColumn columntelefono;
-            
             private global::System.Data.DataColumn columncodigoc;
             
             private global::System.Data.DataColumn columnnumero1;
-            
-            private global::System.Data.DataColumn columnnombre1;
             
             private global::System.Data.DataColumn columndetalle;
             
@@ -311,11 +305,13 @@ namespace SitioWebUniversidad {
             
             private global::System.Data.DataColumn columnsigla;
             
-            private global::System.Data.DataColumn columnsigla1;
-            
             private global::System.Data.DataColumn columnnombre2;
             
-            private global::System.Data.DataColumn columndetalle1;
+            private global::System.Data.DataColumn columnsigla1;
+            
+            private global::System.Data.DataColumn columnnombre33;
+            
+            private global::System.Data.DataColumn columndetalle3;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -416,22 +412,6 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn correoColumn {
-                get {
-                    return this.columncorreo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn telefonoColumn {
-                get {
-                    return this.columntelefono;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn codigocColumn {
                 get {
                     return this.columncodigoc;
@@ -443,14 +423,6 @@ namespace SitioWebUniversidad {
             public global::System.Data.DataColumn numero1Column {
                 get {
                     return this.columnnumero1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombre1Column {
-                get {
-                    return this.columnnombre1;
                 }
             }
             
@@ -480,14 +452,6 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn sigla1Column {
-                get {
-                    return this.columnsigla1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn nombre2Column {
                 get {
                     return this.columnnombre2;
@@ -496,9 +460,25 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn detalle1Column {
+            public global::System.Data.DataColumn sigla1Column {
                 get {
-                    return this.columndetalle1;
+                    return this.columnsigla1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombre33Column {
+                get {
+                    return this.columnnombre33;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn detalle3Column {
+                get {
+                    return this.columndetalle3;
                 }
             }
             
@@ -548,17 +528,15 @@ namespace SitioWebUniversidad {
                         string paterno, 
                         string materno, 
                         string genero, 
-                        string correo, 
-                        int telefono, 
                         int codigoc, 
                         int numero1, 
-                        string nombre1, 
                         string detalle, 
                         int puntaje, 
                         string sigla, 
-                        string sigla1, 
                         string nombre2, 
-                        string detalle1) {
+                        string sigla1, 
+                        string nombre33, 
+                        string detalle3) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         codigo,
@@ -569,17 +547,15 @@ namespace SitioWebUniversidad {
                         paterno,
                         materno,
                         genero,
-                        correo,
-                        telefono,
                         codigoc,
                         numero1,
-                        nombre1,
                         detalle,
                         puntaje,
                         sigla,
-                        sigla1,
                         nombre2,
-                        detalle1};
+                        sigla1,
+                        nombre33,
+                        detalle3};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -621,17 +597,15 @@ namespace SitioWebUniversidad {
                 this.columnpaterno = base.Columns["paterno"];
                 this.columnmaterno = base.Columns["materno"];
                 this.columngenero = base.Columns["genero"];
-                this.columncorreo = base.Columns["correo"];
-                this.columntelefono = base.Columns["telefono"];
                 this.columncodigoc = base.Columns["codigoc"];
                 this.columnnumero1 = base.Columns["numero1"];
-                this.columnnombre1 = base.Columns["nombre1"];
                 this.columndetalle = base.Columns["detalle"];
                 this.columnpuntaje = base.Columns["puntaje"];
                 this.columnsigla = base.Columns["sigla"];
-                this.columnsigla1 = base.Columns["sigla1"];
                 this.columnnombre2 = base.Columns["nombre2"];
-                this.columndetalle1 = base.Columns["detalle1"];
+                this.columnsigla1 = base.Columns["sigla1"];
+                this.columnnombre33 = base.Columns["nombre33"];
+                this.columndetalle3 = base.Columns["detalle3"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -653,28 +627,24 @@ namespace SitioWebUniversidad {
                 base.Columns.Add(this.columnmaterno);
                 this.columngenero = new global::System.Data.DataColumn("genero", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngenero);
-                this.columncorreo = new global::System.Data.DataColumn("correo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncorreo);
-                this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntelefono);
                 this.columncodigoc = new global::System.Data.DataColumn("codigoc", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigoc);
                 this.columnnumero1 = new global::System.Data.DataColumn("numero1", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero1);
-                this.columnnombre1 = new global::System.Data.DataColumn("nombre1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre1);
                 this.columndetalle = new global::System.Data.DataColumn("detalle", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndetalle);
                 this.columnpuntaje = new global::System.Data.DataColumn("puntaje", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpuntaje);
                 this.columnsigla = new global::System.Data.DataColumn("sigla", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnsigla);
-                this.columnsigla1 = new global::System.Data.DataColumn("sigla1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsigla1);
                 this.columnnombre2 = new global::System.Data.DataColumn("nombre2", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre2);
-                this.columndetalle1 = new global::System.Data.DataColumn("detalle1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndetalle1);
+                this.columnsigla1 = new global::System.Data.DataColumn("sigla1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsigla1);
+                this.columnnombre33 = new global::System.Data.DataColumn("nombre33", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre33);
+                this.columndetalle3 = new global::System.Data.DataColumn("detalle3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndetalle3);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodigo,
                                 this.columnnumero,
@@ -693,24 +663,21 @@ namespace SitioWebUniversidad {
                 this.columnmaterno.MaxLength = 30;
                 this.columngenero.AllowDBNull = false;
                 this.columngenero.MaxLength = 10;
-                this.columncorreo.AllowDBNull = false;
-                this.columncorreo.MaxLength = 50;
-                this.columntelefono.AllowDBNull = false;
                 this.columncodigoc.AllowDBNull = false;
                 this.columnnumero1.AllowDBNull = false;
-                this.columnnombre1.AllowDBNull = false;
-                this.columnnombre1.MaxLength = 30;
                 this.columndetalle.AllowDBNull = false;
                 this.columndetalle.MaxLength = 100;
                 this.columnpuntaje.AllowDBNull = false;
                 this.columnsigla.AllowDBNull = false;
                 this.columnsigla.MaxLength = 30;
-                this.columnsigla1.AllowDBNull = false;
-                this.columnsigla1.MaxLength = 30;
                 this.columnnombre2.AllowDBNull = false;
                 this.columnnombre2.MaxLength = 30;
-                this.columndetalle1.AllowDBNull = false;
-                this.columndetalle1.MaxLength = 100;
+                this.columnsigla1.AllowDBNull = false;
+                this.columnsigla1.MaxLength = 30;
+                this.columnnombre33.AllowDBNull = false;
+                this.columnnombre33.MaxLength = 30;
+                this.columndetalle3.AllowDBNull = false;
+                this.columndetalle3.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -941,28 +908,6 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string correo {
-                get {
-                    return ((string)(this[this.tableDataTable1.correoColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.correoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int telefono {
-                get {
-                    return ((int)(this[this.tableDataTable1.telefonoColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.telefonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int codigoc {
                 get {
                     return ((int)(this[this.tableDataTable1.codigocColumn]));
@@ -980,17 +925,6 @@ namespace SitioWebUniversidad {
                 }
                 set {
                     this[this.tableDataTable1.numero1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre1 {
-                get {
-                    return ((string)(this[this.tableDataTable1.nombre1Column]));
-                }
-                set {
-                    this[this.tableDataTable1.nombre1Column] = value;
                 }
             }
             
@@ -1029,17 +963,6 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string sigla1 {
-                get {
-                    return ((string)(this[this.tableDataTable1.sigla1Column]));
-                }
-                set {
-                    this[this.tableDataTable1.sigla1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string nombre2 {
                 get {
                     return ((string)(this[this.tableDataTable1.nombre2Column]));
@@ -1051,12 +974,34 @@ namespace SitioWebUniversidad {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string detalle1 {
+            public string sigla1 {
                 get {
-                    return ((string)(this[this.tableDataTable1.detalle1Column]));
+                    return ((string)(this[this.tableDataTable1.sigla1Column]));
                 }
                 set {
-                    this[this.tableDataTable1.detalle1Column] = value;
+                    this[this.tableDataTable1.sigla1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre33 {
+                get {
+                    return ((string)(this[this.tableDataTable1.nombre33Column]));
+                }
+                set {
+                    this[this.tableDataTable1.nombre33Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string detalle3 {
+                get {
+                    return ((string)(this[this.tableDataTable1.detalle3Column]));
+                }
+                set {
+                    this[this.tableDataTable1.detalle3Column] = value;
                 }
             }
         }
@@ -1228,17 +1173,15 @@ namespace SitioWebUniversidad.DataSet4TableAdapters {
             tableMapping.ColumnMappings.Add("paterno", "paterno");
             tableMapping.ColumnMappings.Add("materno", "materno");
             tableMapping.ColumnMappings.Add("genero", "genero");
-            tableMapping.ColumnMappings.Add("correo", "correo");
-            tableMapping.ColumnMappings.Add("telefono", "telefono");
             tableMapping.ColumnMappings.Add("codigoc", "codigoc");
             tableMapping.ColumnMappings.Add("numero1", "numero1");
-            tableMapping.ColumnMappings.Add("nombre1", "nombre1");
             tableMapping.ColumnMappings.Add("detalle", "detalle");
             tableMapping.ColumnMappings.Add("puntaje", "puntaje");
             tableMapping.ColumnMappings.Add("sigla", "sigla");
-            tableMapping.ColumnMappings.Add("sigla1", "sigla1");
             tableMapping.ColumnMappings.Add("nombre2", "nombre2");
-            tableMapping.ColumnMappings.Add("detalle1", "detalle1");
+            tableMapping.ColumnMappings.Add("sigla1", "sigla1");
+            tableMapping.ColumnMappings.Add("nombre3", "nombre33");
+            tableMapping.ColumnMappings.Add("detalle3", "detalle3");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1252,23 +1195,17 @@ namespace SitioWebUniversidad.DataSet4TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        detalleEvaluacion.*, estudiante.*, evaluacion.*, materia.*
+            this._commandCollection[0].CommandText = @"SELECT        detalleEvaluacion.codigo, detalleEvaluacion.numero, detalleEvaluacion.nota, estudiante.codigo AS codigo1, estudiante.nombre, estudiante.paterno, 
+                         estudiante.materno, estudiante.genero, estudiante.codigoc, evaluacion.numero AS numero1, evaluacion.detalle, evaluacion.puntaje, evaluacion.sigla, 
+                         evaluacion.nombre AS nombre2, materia.sigla AS sigla1, materia.nombre AS nombre3, materia.detalle AS detalle3
 FROM            detalleEvaluacion INNER JOIN
                          estudiante ON detalleEvaluacion.codigo = estudiante.codigo INNER JOIN
                          evaluacion ON detalleEvaluacion.numero = evaluacion.numero INNER JOIN
                          materia ON evaluacion.sigla = materia.sigla";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        detalleEvaluacion.*, estudiante.*, evaluacion.*, materia.*
-FROM            detalleEvaluacion INNER JOIN
-                         estudiante ON detalleEvaluacion.codigo = estudiante.codigo INNER JOIN
-                         evaluacion ON detalleEvaluacion.numero = evaluacion.numero INNER JOIN
-                         materia ON evaluacion.sigla = materia.sigla";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1290,30 +1227,6 @@ FROM            detalleEvaluacion INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet4.DataTable1DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet4.DataTable1DataTable dataTable = new DataSet4.DataTable1DataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet4.DataTable1DataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet4.DataTable1DataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
             DataSet4.DataTable1DataTable dataTable = new DataSet4.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

@@ -22,6 +22,8 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("dbuniversidadModel1", "FK__detalleEv__codig__15502E78", "estudiante", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SitioWebUniversidad.estudiante), "detalleEvaluacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SitioWebUniversidad.detalleEvaluacion), true)]
 [assembly: EdmRelationshipAttribute("dbuniversidadModel1", "FK__detalleEv__numer__164452B1", "evaluacion", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SitioWebUniversidad.evaluacion), "detalleEvaluacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SitioWebUniversidad.detalleEvaluacion), true)]
 [assembly: EdmRelationshipAttribute("dbuniversidadModel1", "FK__evaluacio__sigla__108B795B", "materia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SitioWebUniversidad.materia), "evaluacion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SitioWebUniversidad.evaluacion), true)]
+[assembly: EdmRelationshipAttribute("dbuniversidadModel1", "FK__inscripci__codig__37A5467C", "estudiante", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SitioWebUniversidad.estudiante), "inscripcion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SitioWebUniversidad.inscripcion), true)]
+[assembly: EdmRelationshipAttribute("dbuniversidadModel1", "FK__inscripci__sigla__36B12243", "materia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SitioWebUniversidad.materia), "inscripcion", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SitioWebUniversidad.inscripcion), true)]
 
 #endregion
 
@@ -152,6 +154,22 @@ namespace SitioWebUniversidad
             }
         }
         private ObjectSet<materia> _materia;
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        public ObjectSet<inscripcion> inscripcion
+        {
+            get
+            {
+                if ((_inscripcion == null))
+                {
+                    _inscripcion = base.CreateObjectSet<inscripcion>("inscripcion");
+                }
+                return _inscripcion;
+            }
+        }
+        private ObjectSet<inscripcion> _inscripcion;
 
         #endregion
         #region Métodos AddTo
@@ -194,6 +212,14 @@ namespace SitioWebUniversidad
         public void AddTomateria(materia materia)
         {
             base.AddObject("materia", materia);
+        }
+    
+        /// <summary>
+        /// Método desusado para agregar un nuevo objeto al EntitySet inscripcion. Considere la posibilidad de usar el método .Add de la propiedad ObjectSet&lt;T&gt; asociada.
+        /// </summary>
+        public void AddToinscripcion(inscripcion inscripcion)
+        {
+            base.AddObject("inscripcion", inscripcion);
         }
 
         #endregion
@@ -821,6 +847,28 @@ namespace SitioWebUniversidad
                 }
             }
         }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbuniversidadModel1", "FK__inscripci__codig__37A5467C", "inscripcion")]
+        public EntityCollection<inscripcion> inscripcion
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<inscripcion>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "inscripcion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<inscripcion>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "inscripcion", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -1050,6 +1098,195 @@ namespace SitioWebUniversidad
     /// <summary>
     /// No hay documentación de metadatos disponible.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="dbuniversidadModel1", Name="inscripcion")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class inscripcion : EntityObject
+    {
+        #region Método de generador
+    
+        /// <summary>
+        /// Crear un nuevo objeto inscripcion.
+        /// </summary>
+        /// <param name="sigla">Valor inicial de la propiedad sigla.</param>
+        /// <param name="codigo">Valor inicial de la propiedad codigo.</param>
+        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
+        public static inscripcion Createinscripcion(global::System.String sigla, global::System.Int32 codigo, global::System.DateTime fecha)
+        {
+            inscripcion inscripcion = new inscripcion();
+            inscripcion.sigla = sigla;
+            inscripcion.codigo = codigo;
+            inscripcion.fecha = fecha;
+            return inscripcion;
+        }
+
+        #endregion
+        #region Propiedades primitivas
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String sigla
+        {
+            get
+            {
+                return _sigla;
+            }
+            set
+            {
+                if (_sigla != value)
+                {
+                    OnsiglaChanging(value);
+                    ReportPropertyChanging("sigla");
+                    _sigla = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("sigla");
+                    OnsiglaChanged();
+                }
+            }
+        }
+        private global::System.String _sigla;
+        partial void OnsiglaChanging(global::System.String value);
+        partial void OnsiglaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 codigo
+        {
+            get
+            {
+                return _codigo;
+            }
+            set
+            {
+                if (_codigo != value)
+                {
+                    OncodigoChanging(value);
+                    ReportPropertyChanging("codigo");
+                    _codigo = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("codigo");
+                    OncodigoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _codigo;
+        partial void OncodigoChanging(global::System.Int32 value);
+        partial void OncodigoChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime fecha
+        {
+            get
+            {
+                return _fecha;
+            }
+            set
+            {
+                OnfechaChanging(value);
+                ReportPropertyChanging("fecha");
+                _fecha = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("fecha");
+                OnfechaChanged();
+            }
+        }
+        private global::System.DateTime _fecha;
+        partial void OnfechaChanging(global::System.DateTime value);
+        partial void OnfechaChanged();
+
+        #endregion
+    
+        #region Propiedades de navegación
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbuniversidadModel1", "FK__inscripci__codig__37A5467C", "estudiante")]
+        public estudiante estudiante
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<estudiante>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "estudiante").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<estudiante>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "estudiante").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<estudiante> estudianteReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<estudiante>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "estudiante");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<estudiante>("dbuniversidadModel1.FK__inscripci__codig__37A5467C", "estudiante", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbuniversidadModel1", "FK__inscripci__sigla__36B12243", "materia")]
+        public materia materia
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<materia>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "materia").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<materia>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "materia").Value = value;
+            }
+        }
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<materia> materiaReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<materia>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "materia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<materia>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "materia", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No hay documentación de metadatos disponible.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="dbuniversidadModel1", Name="materia")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -1172,6 +1409,28 @@ namespace SitioWebUniversidad
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<evaluacion>("dbuniversidadModel1.FK__evaluacio__sigla__108B795B", "evaluacion", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("dbuniversidadModel1", "FK__inscripci__sigla__36B12243", "inscripcion")]
+        public EntityCollection<inscripcion> inscripcion
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<inscripcion>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "inscripcion");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<inscripcion>("dbuniversidadModel1.FK__inscripci__sigla__36B12243", "inscripcion", value);
                 }
             }
         }

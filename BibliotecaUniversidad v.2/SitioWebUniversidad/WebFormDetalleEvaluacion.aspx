@@ -134,7 +134,7 @@
                 <td class="style2">
                     <asp:Button ID="btnguardarnotas" runat="server" onclick="btnguardarnotas_Click" 
                         Text="Guardar Notas" />
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
                 </td>
                 <td>
                     &nbsp;</td>

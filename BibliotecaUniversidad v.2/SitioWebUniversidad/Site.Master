@@ -46,8 +46,9 @@ Released   : 20100801
 					    <li><a href="../Paginas/Estudiante.aspx">Estudiante</a></li>
 					    <li><a href="../Paginas/Materia.aspx">Materia</a></li>
                         <li><a href="../Paginas/Carrera.aspx">Carrera</a></li>
-                        <li><a href="../Paginas/WebDetalleEvaluacion.aspx">Evaluaciones</a></li>
-                        <li><a href="../Paginas/ReporteDetalleNostas.aspx">Detalle de Notas</a></li>
+                         <li><a href="../Paginas/InscripcionMateria.aspx">Inscripcion de Materia</a></li>
+                        <li><a href="../Paginas/WebDetalleEvaluacion.aspx">Registro de Notas</a></li>
+                        <li><a href="../Paginas/ReporteDetalleNostas.aspx">Generar Reporte</a></li>
 				    </ul>
 					<!-- InstanceEndEditable -->
                     </div>

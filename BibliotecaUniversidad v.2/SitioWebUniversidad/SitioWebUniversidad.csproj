@@ -64,12 +64,14 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="imagenes\calendar.JPG" />
     <Content Include="ComponenteLetras.ascx" />
     <Content Include="Estudiante.ascx" />
     <Content Include="EstudianteLetras.ascx" />
     <Content Include="EstudianteNum.ascx" />
     <Content Include="Paginas\Carrera.aspx" />
     <Content Include="Paginas\Estudiante.aspx" />
+    <Content Include="Paginas\InscripcionMateria.aspx" />
     <Content Include="Paginas\Materia.aspx" />
     <Content Include="Paginas\ReporteDetalleNostas.aspx" />
     <Content Include="Paginas\WebDetalleEvaluacion.aspx" />
@@ -89,6 +91,7 @@
     <Content Include="WebFormCarrera.aspx" />
     <Content Include="WebFormDetalleEvaluacion.aspx" />
     <Content Include="WebFormEstudiante.aspx" />
+    <Content Include="WebFormInscripcionMateria.aspx" />
     <Content Include="WebFormMateria.aspx" />
     <Content Include="WebFormReporte.aspx" />
   </ItemGroup>
@@ -205,6 +208,13 @@
     <Compile Include="Paginas\Estudiante.aspx.designer.cs">
       <DependentUpon>Estudiante.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\InscripcionMateria.aspx.cs">
+      <DependentUpon>InscripcionMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\InscripcionMateria.aspx.designer.cs">
+      <DependentUpon>InscripcionMateria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Materia.aspx.cs">
       <DependentUpon>Materia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,6 +264,13 @@
     </Compile>
     <Compile Include="WebFormEstudiante.aspx.designer.cs">
       <DependentUpon>WebFormEstudiante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormInscripcionMateria.aspx.cs">
+      <DependentUpon>WebFormInscripcionMateria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormInscripcionMateria.aspx.designer.cs">
+      <DependentUpon>WebFormInscripcionMateria.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormMateria.aspx.cs">
       <DependentUpon>WebFormMateria.aspx</DependentUpon>

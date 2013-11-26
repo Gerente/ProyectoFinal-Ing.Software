@@ -14,6 +14,8 @@ namespace SitioWebUniversidad
         protected void Page_Load(object sender, EventArgs e)
         {
             ActualizarVista();
+            btneliminar.Visible = false;
+            btnmodificar.Visible = false;
         }
 
         public void ActualizarVista()
@@ -36,6 +38,7 @@ namespace SitioWebUniversidad
             {
                 Label1.Text = "Error en el registro de la carrera";
             }
+            limpiar();
         }
 
         private bool guardarcarrera(carrera objcarrera)
@@ -69,6 +72,8 @@ namespace SitioWebUniversidad
             {
                 Label1.Text = "Error en la eliminacion";
             }
+            BtnListos();
+            limpiar();
         }
 
         protected void btnmodificar_Click(object sender, EventArgs e)
@@ -88,7 +93,9 @@ namespace SitioWebUniversidad
             else
             {
                 Label1.Text = "Modificacion Incorrecta";
-            }   
+            }
+            BtnListos();
+            limpiar();
         }
 
         protected void btnbuscar_Click(object sender, EventArgs e)
@@ -108,6 +115,27 @@ namespace SitioWebUniversidad
             EstudianteNum1.texto2 = GridView1.Rows[fila].Cells[0].Text;
             EstudianteLetras1.texto3 = GridView1.Rows[fila].Cells[1].Text;
             txtdetalle.Text = GridView1.Rows[fila].Cells[2].Text;
+            BtnModi();
+        }
+        protected void limpiar()
+        {
+            EstudianteLetras1.texto3 = "";
+            EstudianteNum1.texto2 = "";
+            txtdetalle.Text = "";
+
+        }
+        protected void BtnModi()
+        {
+            btneliminar.Visible = true;
+            btnmodificar.Visible = true;
+            btnaceptar.Visible = false;
+            Label1.Text = "";
+        }
+        protected void BtnListos()
+        {
+            btneliminar.Visible = false;
+            btnmodificar.Visible = false;
+            btnaceptar.Visible = true;
         }
     }
 }

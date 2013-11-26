@@ -30,7 +30,15 @@
         }
         .style15
         {
-            width: 351px;
+            width: 144px;
+        }
+        .style16
+        {
+            width: 239px;
+        }
+        .style17
+        {
+            width: 456px;
         }
     </style>
 </head>
@@ -44,16 +52,18 @@
                     Registro de Estudiantes</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Nro de Registro:</td>
                 <td class="style13" colspan="2">
                     <uc1:EstudianteNum ID="EstudianteNum1" runat="server" />
                 </td>
                 <td class="style14">
-                    &nbsp;</td>
+                    <asp:Button ID="btnbuscar" runat="server" onclick="btnbuscar_Click" 
+                        Text="BUSCAR" />
+                </td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Nombre:</td>
                 <td class="style13" colspan="2">
                     <uc2:EstudianteLetras ID="EstudianteLetras1" runat="server" />
@@ -62,7 +72,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Apellido Paterno:</td>
                 <td class="style13" colspan="2">
                     <uc2:EstudianteLetras ID="EstudianteLetras2" runat="server" />
@@ -71,7 +81,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Apellido Materno</td>
                 <td class="style13" colspan="2">
                     <uc2:EstudianteLetras ID="EstudianteLetras3" runat="server" />
@@ -80,7 +90,7 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Genero:</td>
                 <td class="style15">
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" Width="100px">
@@ -88,15 +98,16 @@
                         <asp:ListItem>Masculino</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
-                <td class="style13">
+                <td class="style17">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="RadioButtonList1" ErrorMessage="Ingrese genero"></asp:RequiredFieldValidator>
+                        ControlToValidate="RadioButtonList1" ErrorMessage="Ingrese genero" 
+                        ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
                 <td class="style14">
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Correo:</td>
                 <td class="style13" colspan="2">
                     <uc3:Estudiante ID="Estudiante1" runat="server" />
@@ -105,16 +116,18 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Telefono:</td>
                 <td class="style13" colspan="2">
                     <uc1:EstudianteNum ID="EstudianteNum2" runat="server" />
                 </td>
                 <td class="style14">
-                    &nbsp;</td>
+                    <asp:Button ID="Atras" runat="server" Height="33px" 
+                        PostBackUrl="~/WebFormEstudiante.aspx" Text="Button" Width="112px" />
+                </td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     Carrera:</td>
                 <td class="style13" colspan="2">
                     <asp:DropDownList ID="DropDownList1" runat="server" Width="200px">
@@ -124,14 +137,14 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     <asp:Button ID="btnmodificar" runat="server" onclick="btnmodificar_Click" 
                         Text="MODIFICAR" />
                 </td>
                 <td class="style13" colspan="2">
                     <asp:Button ID="btnregistrar" runat="server" onclick="btnregistrar_Click" 
                         Text="REGISTRAR ESTUDIANTE" Width="188px" />
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text=" "></asp:Label>
                 </td>
                 <td class="style14">
                     <asp:Button ID="btneliminar" runat="server" onclick="btneliminar_Click" 
@@ -139,16 +152,14 @@
                 </td>
             </tr>
             <tr>
-                <td class="style12">
+                <td class="style16">
                     &nbsp;</td>
                 <td class="style13" colspan="2">
                     <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-                        style="margin-right: 11px" />
+                        style="margin-right: 11px; margin-left: 33px;" />
                 </td>
                 <td class="style14">
-                    <asp:Button ID="btnbuscar" runat="server" onclick="btnbuscar_Click" 
-                        Text="BUSCAR" />
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="style1" colspan="4">

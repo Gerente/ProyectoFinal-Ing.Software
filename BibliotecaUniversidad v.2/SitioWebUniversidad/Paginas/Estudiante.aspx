@@ -11,8 +11,9 @@
 					    <li class="current_page_item"><a href="Estudiante.aspx">Estudiante</a></li>
 					    <li><a href="Materia.aspx">Materia</a></li>
                         <li><a href="Carrera.aspx">Carrera</a></li>
-                        <li><a href="WebDetalleEvaluacion.aspx">Evaluaciones</a></li>
-                        <li><a href="ReporteDetalleNostas.aspx">Detalle de Notas</a></li>
+                        <li><a href="InscripcionMateria.aspx">Inscripcion de Materia</a></li>
+                        <li><a href="WebDetalleEvaluacion.aspx">Registro de Notas</a></li>
+                        <li><a href="ReporteDetalleNostas.aspx">Generar Reporte</a></li>
 				    </ul>
 					<!-- InstanceEndEditable -->
                     </div>

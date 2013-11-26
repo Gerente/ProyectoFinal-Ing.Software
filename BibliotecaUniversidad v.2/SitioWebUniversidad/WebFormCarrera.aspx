@@ -59,7 +59,8 @@
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
-                        ControlToValidate="txtdetalle" ErrorMessage="Ingrese Detalle"></asp:RequiredFieldValidator>
+                        ControlToValidate="txtdetalle" ErrorMessage="Ingrese Detalle" 
+                        ForeColor="Red"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -70,7 +71,7 @@
                 <td class="style3">
                     <asp:Button ID="btnaceptar" runat="server" onclick="Button1_Click" 
                         Text="ACEPTAR" Width="123px" />
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="Label1" runat="server"></asp:Label>
                     <asp:Button ID="btneliminar" runat="server" onclick="Button3_Click" 
                         Text="ELIMINAR" Width="136px" />
                 </td>

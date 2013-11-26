@@ -804,6 +804,7 @@
             </FilterValues>
           </Filter>
         </Filters>
+        <Left>0.7421cm</Left>
         <Height>1.8cm</Height>
         <Width>19.1404cm</Width>
         <Style>
@@ -813,10 +814,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>3in</Height>
     <Style />
   </Body>
-  <Width>7.71268in</Width>
+  <Width>8.1715in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>

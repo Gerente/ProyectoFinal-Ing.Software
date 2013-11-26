@@ -13,19 +13,19 @@
                 <td style="width: 272px; height: 33px">&nbsp;</td></tr>
             <tr><td style="width: 109px; height: 33px;"></td>
                 <td style="height: 33px; width: 122px;"><p> <a href="#">Nombres:</a></p></td>
-                <td style="width: 272px; height: 33px"><p>Alumno 1</p></td></tr>
+                <td style="width: 272px; height: 33px"><p>Luis Alfredo Torrez Vedia</p></td></tr>
             <tr>
                 <td style="width: 109px; height: 33px;"></td>
                 <td style="height: 33px; width: 122px;"></td>
-                <td style="width: 272px; height: 33px"><p>Alumno 2</p></td></tr>
+                <td style="width: 272px; height: 33px"><p>Kathia Ivonne Peña Roman</p></td></tr>
             <tr>
                 <td style="width: 109px; height: 33px;"> &nbsp;</td>
                 <td style="height: 33px; width: 122px;"> &nbsp;</td>
-                <td style="width: 272px; height: 33px"><p>Alumno 3</p></td></tr>
+                <td style="width: 272px; height: 33px"><p>Eric Esteban Maida Escobar</p></td></tr>
             <tr>
                 <td style="width: 109px; height: 33px;"> &nbsp;</td>
                 <td style="height: 33px; width: 122px;"> &nbsp;</td>
-                <td style="width: 272px; height: 33px"><p>Alumno 4</p></td></tr>
+                <td style="width: 272px; height: 33px"><p>Josselyne Sandoval Arce</p></td></tr>
             <tr>
                 <td style="width: 109px; height: 14px;"> </td>
                 <td style="height: 14px; width: 122px;"> </td>
