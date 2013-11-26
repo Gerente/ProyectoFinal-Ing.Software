@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbuniversidadModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="dbuniversidadModelStoreContainer">
+    <EntitySet Name="carrera" EntityType="dbuniversidadModel.Store.carrera" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="detalleEvaluacion" EntityType="dbuniversidadModel.Store.detalleEvaluacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="estudiante" EntityType="dbuniversidadModel.Store.estudiante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="evaluacion" EntityType="dbuniversidadModel.Store.evaluacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="materia" EntityType="dbuniversidadModel.Store.materia" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__detalleEv__codig__1A14E395" Association="dbuniversidadModel.Store.FK__detalleEv__codig__1A14E395">
+      <End Role="estudiante" EntitySet="estudiante" />
+      <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__detalleEv__numer__1B0907CE" Association="dbuniversidadModel.Store.FK__detalleEv__numer__1B0907CE">
+      <End Role="evaluacion" EntitySet="evaluacion" />
+      <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__estudiant__codig__145C0A3F" Association="dbuniversidadModel.Store.FK__estudiant__codig__145C0A3F">
+      <End Role="carrera" EntitySet="carrera" />
+      <End Role="estudiante" EntitySet="estudiante" />
+    </AssociationSet>
+    <AssociationSet Name="FK__evaluacio__sigla__173876EA" Association="dbuniversidadModel.Store.FK__evaluacio__sigla__173876EA">
+      <End Role="materia" EntitySet="materia" />
+      <End Role="evaluacion" EntitySet="evaluacion" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="carrera">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="detalleEvaluacion">
+    <Key>
+      <PropertyRef Name="codigo" />
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="nota" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estudiante">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="paterno" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="materno" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="genero" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="correo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="telefono" Type="int" Nullable="false" />
+    <Property Name="codigoc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="evaluacion">
+    <Key>
+      <PropertyRef Name="numero" />
+    </Key>
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="puntaje" Type="int" Nullable="false" />
+    <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="materia">
+    <Key>
+      <PropertyRef Name="sigla" />
+    </Key>
+    <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__detalleEv__codig__1A14E395">
+    <End Role="estudiante" Type="dbuniversidadModel.Store.estudiante" Multiplicity="1" />
+    <End Role="detalleEvaluacion" Type="dbuniversidadModel.Store.detalleEvaluacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estudiante">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="detalleEvaluacion">
+        <PropertyRef Name="codigo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__detalleEv__numer__1B0907CE">
+    <End Role="evaluacion" Type="dbuniversidadModel.Store.evaluacion" Multiplicity="1" />
+    <End Role="detalleEvaluacion" Type="dbuniversidadModel.Store.detalleEvaluacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="evaluacion">
+        <PropertyRef Name="numero" />
+      </Principal>
+      <Dependent Role="detalleEvaluacion">
+        <PropertyRef Name="numero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__estudiant__codig__145C0A3F">
+    <End Role="carrera" Type="dbuniversidadModel.Store.carrera" Multiplicity="1" />
+    <End Role="estudiante" Type="dbuniversidadModel.Store.estudiante" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="carrera">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="estudiante">
+        <PropertyRef Name="codigoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__evaluacio__sigla__173876EA">
+    <End Role="materia" Type="dbuniversidadModel.Store.materia" Multiplicity="1" />
+    <End Role="evaluacion" Type="dbuniversidadModel.Store.evaluacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materia">
+        <PropertyRef Name="sigla" />
+      </Principal>
+      <Dependent Role="evaluacion">
+        <PropertyRef Name="sigla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

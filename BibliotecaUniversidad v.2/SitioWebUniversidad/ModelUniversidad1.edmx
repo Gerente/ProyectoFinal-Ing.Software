@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbuniversidadModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbuniversidadModel1StoreContainer">
+          <EntitySet Name="carrera" EntityType="dbuniversidadModel1.Store.carrera" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="detalleEvaluacion" EntityType="dbuniversidadModel1.Store.detalleEvaluacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="estudiante" EntityType="dbuniversidadModel1.Store.estudiante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="evaluacion" EntityType="dbuniversidadModel1.Store.evaluacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="materia" EntityType="dbuniversidadModel1.Store.materia" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK__detalleEv__codig__15502E78" Association="dbuniversidadModel1.Store.FK__detalleEv__codig__15502E78">
+            <End Role="estudiante" EntitySet="estudiante" />
+            <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleEv__numer__164452B1" Association="dbuniversidadModel1.Store.FK__detalleEv__numer__164452B1">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__estudiant__codig__0BC6C43E" Association="dbuniversidadModel1.Store.FK__estudiant__codig__0BC6C43E">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="estudiante" EntitySet="estudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK__evaluacio__sigla__108B795B" Association="dbuniversidadModel1.Store.FK__evaluacio__sigla__108B795B">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="carrera">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="detalleEvaluacion">
+          <Key>
+            <PropertyRef Name="codigo" />
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="nota" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="estudiante">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="paterno" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="materno" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="genero" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="correo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="telefono" Type="int" Nullable="false" />
+          <Property Name="codigoc" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="evaluacion">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="puntaje" Type="int" Nullable="false" />
+          <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="sigla" />
+          </Key>
+          <Property Name="sigla" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="nombre" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="detalle" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK__detalleEv__codig__15502E78">
+          <End Role="estudiante" Type="dbuniversidadModel1.Store.estudiante" Multiplicity="1" />
+          <End Role="detalleEvaluacion" Type="dbuniversidadModel1.Store.detalleEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estudiante">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="detalleEvaluacion">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleEv__numer__164452B1">
+          <End Role="evaluacion" Type="dbuniversidadModel1.Store.evaluacion" Multiplicity="1" />
+          <End Role="detalleEvaluacion" Type="dbuniversidadModel1.Store.detalleEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="detalleEvaluacion">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__estudiant__codig__0BC6C43E">
+          <End Role="carrera" Type="dbuniversidadModel1.Store.carrera" Multiplicity="1" />
+          <End Role="estudiante" Type="dbuniversidadModel1.Store.estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="estudiante">
+              <PropertyRef Name="codigoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__evaluacio__sigla__108B795B">
+          <End Role="materia" Type="dbuniversidadModel1.Store.materia" Multiplicity="1" />
+          <End Role="evaluacion" Type="dbuniversidadModel1.Store.evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="sigla" />
+            </Principal>
+            <Dependent Role="evaluacion">
+              <PropertyRef Name="sigla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbuniversidadModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="dbuniversidadEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="carrera" EntityType="dbuniversidadModel1.carrera" />
+          <EntitySet Name="detalleEvaluacion" EntityType="dbuniversidadModel1.detalleEvaluacion" />
+          <EntitySet Name="estudiante" EntityType="dbuniversidadModel1.estudiante" />
+          <EntitySet Name="evaluacion" EntityType="dbuniversidadModel1.evaluacion" />
+          <EntitySet Name="materia" EntityType="dbuniversidadModel1.materia" />
+          <AssociationSet Name="FK__estudiant__codig__0BC6C43E" Association="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E">
+            <End Role="carrera" EntitySet="carrera" />
+            <End Role="estudiante" EntitySet="estudiante" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleEv__codig__15502E78" Association="dbuniversidadModel1.FK__detalleEv__codig__15502E78">
+            <End Role="estudiante" EntitySet="estudiante" />
+            <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detalleEv__numer__164452B1" Association="dbuniversidadModel1.FK__detalleEv__numer__164452B1">
+            <End Role="evaluacion" EntitySet="evaluacion" />
+            <End Role="detalleEvaluacion" EntitySet="detalleEvaluacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__evaluacio__sigla__108B795B" Association="dbuniversidadModel1.FK__evaluacio__sigla__108B795B">
+            <End Role="materia" EntitySet="materia" />
+            <End Role="evaluacion" EntitySet="evaluacion" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="carrera">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="estudiante" Relationship="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" FromRole="carrera" ToRole="estudiante" />
+        </EntityType>
+        <EntityType Name="detalleEvaluacion">
+          <Key>
+            <PropertyRef Name="codigo" />
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="nota" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="estudiante" Relationship="dbuniversidadModel1.FK__detalleEv__codig__15502E78" FromRole="detalleEvaluacion" ToRole="estudiante" />
+          <NavigationProperty Name="evaluacion" Relationship="dbuniversidadModel1.FK__detalleEv__numer__164452B1" FromRole="detalleEvaluacion" ToRole="evaluacion" />
+        </EntityType>
+        <EntityType Name="estudiante">
+          <Key>
+            <PropertyRef Name="codigo" />
+          </Key>
+          <Property Name="codigo" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="paterno" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="materno" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="genero" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="correo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telefono" Type="Int32" Nullable="false" />
+          <Property Name="codigoc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="carrera" Relationship="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" FromRole="estudiante" ToRole="carrera" />
+          <NavigationProperty Name="detalleEvaluacion" Relationship="dbuniversidadModel1.FK__detalleEv__codig__15502E78" FromRole="estudiante" ToRole="detalleEvaluacion" />
+        </EntityType>
+        <EntityType Name="evaluacion">
+          <Key>
+            <PropertyRef Name="numero" />
+          </Key>
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="puntaje" Type="Int32" Nullable="false" />
+          <Property Name="sigla" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="detalleEvaluacion" Relationship="dbuniversidadModel1.FK__detalleEv__numer__164452B1" FromRole="evaluacion" ToRole="detalleEvaluacion" />
+          <NavigationProperty Name="materia" Relationship="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" FromRole="evaluacion" ToRole="materia" />
+        </EntityType>
+        <EntityType Name="materia">
+          <Key>
+            <PropertyRef Name="sigla" />
+          </Key>
+          <Property Name="sigla" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="detalle" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="evaluacion" Relationship="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" FromRole="materia" ToRole="evaluacion" />
+        </EntityType>
+        <Association Name="FK__estudiant__codig__0BC6C43E">
+          <End Role="carrera" Type="dbuniversidadModel1.carrera" Multiplicity="1" />
+          <End Role="estudiante" Type="dbuniversidadModel1.estudiante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="carrera">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="estudiante">
+              <PropertyRef Name="codigoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleEv__codig__15502E78">
+          <End Role="estudiante" Type="dbuniversidadModel1.estudiante" Multiplicity="1" />
+          <End Role="detalleEvaluacion" Type="dbuniversidadModel1.detalleEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estudiante">
+              <PropertyRef Name="codigo" />
+            </Principal>
+            <Dependent Role="detalleEvaluacion">
+              <PropertyRef Name="codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detalleEv__numer__164452B1">
+          <End Role="evaluacion" Type="dbuniversidadModel1.evaluacion" Multiplicity="1" />
+          <End Role="detalleEvaluacion" Type="dbuniversidadModel1.detalleEvaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="evaluacion">
+              <PropertyRef Name="numero" />
+            </Principal>
+            <Dependent Role="detalleEvaluacion">
+              <PropertyRef Name="numero" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__evaluacio__sigla__108B795B">
+          <End Role="materia" Type="dbuniversidadModel1.materia" Multiplicity="1" />
+          <End Role="evaluacion" Type="dbuniversidadModel1.evaluacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="materia">
+              <PropertyRef Name="sigla" />
+            </Principal>
+            <Dependent Role="evaluacion">
+              <PropertyRef Name="sigla" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbuniversidadModel1StoreContainer" CdmEntityContainer="dbuniversidadEntities1">
+          <EntitySetMapping Name="carrera"><EntityTypeMapping TypeName="dbuniversidadModel1.carrera"><MappingFragment StoreEntitySet="carrera">
+            <ScalarProperty Name="codigo" ColumnName="codigo" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="detalle" ColumnName="detalle" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="detalleEvaluacion"><EntityTypeMapping TypeName="dbuniversidadModel1.detalleEvaluacion"><MappingFragment StoreEntitySet="detalleEvaluacion">
+            <ScalarProperty Name="codigo" ColumnName="codigo" />
+            <ScalarProperty Name="numero" ColumnName="numero" />
+            <ScalarProperty Name="nota" ColumnName="nota" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="estudiante"><EntityTypeMapping TypeName="dbuniversidadModel1.estudiante"><MappingFragment StoreEntitySet="estudiante">
+            <ScalarProperty Name="codigo" ColumnName="codigo" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="paterno" ColumnName="paterno" />
+            <ScalarProperty Name="materno" ColumnName="materno" />
+            <ScalarProperty Name="genero" ColumnName="genero" />
+            <ScalarProperty Name="correo" ColumnName="correo" />
+            <ScalarProperty Name="telefono" ColumnName="telefono" />
+            <ScalarProperty Name="codigoc" ColumnName="codigoc" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="evaluacion"><EntityTypeMapping TypeName="dbuniversidadModel1.evaluacion"><MappingFragment StoreEntitySet="evaluacion">
+            <ScalarProperty Name="numero" ColumnName="numero" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="detalle" ColumnName="detalle" />
+            <ScalarProperty Name="puntaje" ColumnName="puntaje" />
+            <ScalarProperty Name="sigla" ColumnName="sigla" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="materia"><EntityTypeMapping TypeName="dbuniversidadModel1.materia"><MappingFragment StoreEntitySet="materia">
+            <ScalarProperty Name="sigla" ColumnName="sigla" />
+            <ScalarProperty Name="nombre" ColumnName="nombre" />
+            <ScalarProperty Name="detalle" ColumnName="detalle" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ModelUniversidad1">
+        <EntityTypeShape EntityType="dbuniversidadModel1.carrera" Width="1.5" PointX="0.75" PointY="6.375" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.detalleEvaluacion" Width="1.5" PointX="5.25" PointY="1.125" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.estudiante" Width="1.5" PointX="3" PointY="5.875" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.evaluacion" Width="1.5" PointX="3" PointY="1" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbuniversidadModel1.materia" Width="1.5" PointX="0.75" PointY="1.25" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="dbuniversidadModel1.FK__estudiant__codig__0BC6C43E" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="7.2689925130208337" />
+          <ConnectorPoint PointX="3" PointY="7.2689925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbuniversidadModel1.FK__detalleEv__codig__15502E78" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="7.3458968098958328" />
+          <ConnectorPoint PointX="6" PointY="7.3458968098958328" />
+          <ConnectorPoint PointX="6" PointY="3.1052864583333335" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbuniversidadModel1.FK__detalleEv__numer__164452B1" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.1151432291666667" />
+          <ConnectorPoint PointX="5.25" PointY="2.1151432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbuniversidadModel1.FK__evaluacio__sigla__108B795B" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.1439925130208337" />
+          <ConnectorPoint PointX="3" PointY="2.1439925130208337" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

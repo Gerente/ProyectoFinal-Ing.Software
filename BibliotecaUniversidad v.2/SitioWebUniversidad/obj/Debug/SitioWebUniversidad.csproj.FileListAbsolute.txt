@@ -1,0 +1,32 @@
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.dll
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.pdb
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.dll
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.pdb
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.dll
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.pdb
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.dll
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.pdb
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\RdlCompile.cache
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\RdlCompile.compiled
+D:\Proyecto DAPP II\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.csprojResolveAssemblyReference.cache
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.dll
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\bin\SitioWebUniversidad.pdb
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\RdlCompile.cache
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\RdlCompile.compiled
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.dll
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.pdb
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\bin\SitioWebUniversidad.dll
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\bin\SitioWebUniversidad.pdb
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.csprojResolveAssemblyReference.cache
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\RdlCompile.cache
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\RdlCompile.compiled
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.dll
+C:\Users\Eric\Desktop\pro\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.pdb
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\bin\SitioWebUniversidad.dll
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\bin\SitioWebUniversidad.pdb
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\RdlCompile.cache
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\RdlCompile.compiled
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.dll
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\SitioWebUniversidad\obj\Debug\SitioWebUniversidad.pdb

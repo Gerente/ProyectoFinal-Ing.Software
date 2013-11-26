@@ -1,0 +1,18 @@
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.dll
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.pdb
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.dll
+C:\Users\Eric\Documents\Visual Studio 2010\Projects\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.pdb
+D:\Proyecto DAPP II\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.dll
+D:\Proyecto DAPP II\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.pdb
+D:\Proyecto DAPP II\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.dll
+D:\Proyecto DAPP II\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.pdb
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.dll
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.pdb
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.dll
+C:\Users\Alfredo\Desktop\BibliotecaUniversidad\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.pdb
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.dll
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\BibliotecaUniversidad\bin\Debug\BibliotecaUniversidad.pdb
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\BibliotecaUniversidad\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.dll
+C:\Users\kitty\Desktop\PROYECTO INGENIERIA SOFTWARE\BibliotecaUniversidad v.2\BibliotecaUniversidad\obj\Debug\BibliotecaUniversidad.pdb
