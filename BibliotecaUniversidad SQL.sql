@@ -1,6 +1,8 @@
 create database dbuniversidad
 use dbuniversidad
 
+--Esto es solo prueba
+
 go
 
 create table carrera
